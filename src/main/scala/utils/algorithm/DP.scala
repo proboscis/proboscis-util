@@ -1,6 +1,5 @@
 package utils.algorithm
 
-import utils.Memo
 
 /**
  * @author glyph
@@ -30,11 +29,4 @@ object DP {
     }
   }
 */
-  val dp2:((Int,Int)) => Int = Memo.apply[(Int,Int),Int]{
-    case (x,y) if x == 0 || x == 1 || y == 0 || y == 1 => 1
-    case (x,y) => dp2((x-1,y-1)) + dp2((x-2,y-2))
-  }
-  def main(args: Array[String]) {
-    println(dp2((3,3)))
-  }
 }
